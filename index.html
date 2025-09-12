@@ -46,6 +46,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
+    <!-- Calendly Integration -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
     <style>
         .mandala-animation {
             animation: rotate 20s linear infinite;
@@ -79,6 +83,100 @@
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        
+        /* Form Styles */
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .form-label {
+            position: absolute;
+            left: 1.5rem;
+            top: 1rem;
+            color: #6b7280;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label {
+            transform: translateY(-2.5rem) scale(0.9);
+            color: #D4AF37;
+            background: white;
+            padding: 0 0.5rem;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .success-message {
+            color: #10b981;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
         }
     </style>
 </head>
@@ -137,10 +235,10 @@
                     
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                        <button onclick="openCalendly()" class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                             <i class="fas fa-lotus-flower mr-2"></i>Join a Workshop
                         </button>
-                        <button class="border-2 border-sacred-gold text-sacred-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-sacred-gold hover:text-white transition-all duration-300">
+                        <button onclick="openModal('courseModal')" class="border-2 border-sacred-gold text-sacred-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-sacred-gold hover:text-white transition-all duration-300">
                             <i class="fas fa-palette mr-2"></i>Explore Art Courses
                         </button>
                     </div>
@@ -460,7 +558,7 @@
                             <span class="text-3xl font-bold text-sacred-gold">$149</span>
                             <span class="text-sm text-gray-500 line-through">$199</span>
                         </div>
-                        <button class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        <button onclick="openCalendly('beginner')" class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                             Enroll Now
                         </button>
                     </div>
@@ -502,7 +600,7 @@
                             <span class="text-3xl font-bold text-sacred-gold">$497</span>
                             <span class="text-sm text-gray-500 line-through">$697</span>
                         </div>
-                        <button class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        <button onclick="openModal('masteryCourseModal')" class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                             Enroll Now
                         </button>
                     </div>
@@ -537,7 +635,7 @@
                             <span class="text-3xl font-bold text-sacred-gold">$47</span>
                             <span class="text-sm text-gray-500">per session</span>
                         </div>
-                        <button class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        <button onclick="openCalendly('evening')" class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
                             Enroll Now
                         </button>
                     </div>
@@ -836,10 +934,10 @@
                     
                     <!-- Main CTAs -->
                     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center">
+                        <button onclick="openCalendly('urgent')" class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center">
                             <i class="fas fa-lotus-flower mr-3"></i>Reserve Your Spot Now
                         </button>
-                        <button class="border-2 border-sacred-gold text-sacred-gold px-10 py-5 rounded-full text-xl font-semibold hover:bg-sacred-gold hover:text-white transition-all duration-300 flex items-center">
+                        <button onclick="openModal('leadMagnetModal')" class="border-2 border-sacred-gold text-sacred-gold px-10 py-5 rounded-full text-xl font-semibold hover:bg-sacred-gold hover:text-white transition-all duration-300 flex items-center">
                             <i class="fas fa-download mr-3"></i>Free Starter Guide
                         </button>
                     </div>
@@ -884,12 +982,14 @@
                     <!-- Newsletter Signup -->
                     <div>
                         <h4 class="text-xl font-semibold mb-4">Get Art Tips & Healing Insights</h4>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-3 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-sacred-gold">
-                            <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4" onsubmit="handleNewsletterSubmit(event)">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required class="flex-1 px-6 py-3 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-sacred-gold">
+                            <button type="submit" class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
                                 Subscribe
                             </button>
-                        </div>
+                        </form>
+                        <div id="newsletterSuccess" class="success-message mt-2">Thank you for subscribing! Check your email for confirmation.</div>
+                        <div id="newsletterError" class="error-message mt-2">Please enter a valid email address.</div>
                     </div>
                 </div>
                 
@@ -951,6 +1051,244 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Forms -->
+    
+    <!-- Lead Magnet Modal -->
+    <div id="leadMagnetModal" class="modal">
+        <div class="modal-content p-8">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="closeModal('leadMagnetModal')">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-gift text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-2">Free Sacred Geometry Starter Guide</h3>
+                <p class="text-gray-600">Get your complete beginner's guide to healing through sacred geometry art. Includes templates, techniques, and meditation practices.</p>
+            </div>
+            
+            <form id="leadMagnetForm" onsubmit="handleLeadMagnetSubmit(event)" netlify netlify-honeypot="bot-field" name="lead-magnet">
+                <input type="hidden" name="form-name" value="lead-magnet">
+                <input type="hidden" name="bot-field">
+                
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" placeholder=" " required>
+                    <label class="form-label">Your Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <select name="interest" class="form-input" required>
+                        <option value="">What brings you to sacred geometry?</option>
+                        <option value="stress-relief">Stress Relief & Relaxation</option>
+                        <option value="meditation">Meditation & Mindfulness</option>
+                        <option value="art-therapy">Art Therapy & Healing</option>
+                        <option value="creativity">Creative Expression</option>
+                        <option value="spirituality">Spiritual Growth</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                    <i class="fas fa-download mr-2"></i>Download Free Guide
+                </button>
+                
+                <div class="success-message mt-4" id="leadMagnetSuccess">Thank you! Check your email for the download link.</div>
+                <div class="error-message mt-4" id="leadMagnetError">Please fill in all fields correctly.</div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Course Info Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content p-8">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="closeModal('courseModal')">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-sacred-sage to-sacred-lavender rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-palette text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-2">Explore Our Art Courses</h3>
+                <p class="text-gray-600">Tell us about yourself and we'll recommend the perfect course for your healing journey.</p>
+            </div>
+            
+            <form id="courseForm" onsubmit="handleCourseSubmit(event)" netlify netlify-honeypot="bot-field" name="course-inquiry">
+                <input type="hidden" name="form-name" value="course-inquiry">
+                <input type="hidden" name="bot-field">
+                
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" placeholder=" " required>
+                    <label class="form-label">Your Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" name="phone" class="form-input" placeholder=" ">
+                    <label class="form-label">Phone Number (Optional)</label>
+                </div>
+                
+                <div class="form-group">
+                    <select name="experience" class="form-input" required>
+                        <option value="">Your art experience level?</option>
+                        <option value="complete-beginner">Complete Beginner</option>
+                        <option value="some-experience">Some Art Experience</option>
+                        <option value="intermediate">Intermediate Artist</option>
+                        <option value="advanced">Advanced Artist</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select name="goal" class="form-input" required>
+                        <option value="">Primary goal?</option>
+                        <option value="stress-relief">Reduce Stress & Anxiety</option>
+                        <option value="sleep-improvement">Better Sleep</option>
+                        <option value="mindfulness">Increase Mindfulness</option>
+                        <option value="creativity">Boost Creativity</option>
+                        <option value="spiritual-growth">Spiritual Growth</option>
+                        <option value="art-skills">Learn Art Skills</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="message" class="form-input min-h-[100px]" placeholder=" "></textarea>
+                    <label class="form-label">Any specific questions or concerns?</label>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                    <i class="fas fa-paper-plane mr-2"></i>Get Course Recommendations
+                </button>
+                
+                <div class="success-message mt-4" id="courseSuccess">Thank you! We'll send you personalized course recommendations within 24 hours.</div>
+                <div class="error-message mt-4" id="courseError">Please fill in all required fields.</div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Mastery Course Modal -->
+    <div id="masteryCourseModal" class="modal">
+        <div class="modal-content p-8">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="closeModal('masteryCourseModal')">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-2">Sacred Geometry Mastery Course</h3>
+                <p class="text-gray-600 mb-4">6-week comprehensive program with personal mentorship from Varalakshmi.</p>
+                <div class="bg-sacred-gold/10 rounded-xl p-4 mb-4">
+                    <p class="text-lg font-semibold text-sacred-gold">Special Offer: $497 (Regular $697)</p>
+                    <p class="text-sm text-gray-600">Limited time - Save $200</p>
+                </div>
+            </div>
+            
+            <form id="masteryCourseForm" onsubmit="handleMasteryCourseSubmit(event)" netlify netlify-honeypot="bot-field" name="mastery-course">
+                <input type="hidden" name="form-name" value="mastery-course">
+                <input type="hidden" name="bot-field">
+                
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" placeholder=" " required>
+                    <label class="form-label">Your Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" name="phone" class="form-input" placeholder=" " required>
+                    <label class="form-label">Phone Number</label>
+                </div>
+                
+                <div class="form-group">
+                    <select name="start-preference" class="form-input" required>
+                        <option value="">Preferred start date?</option>
+                        <option value="next-week">Next Week</option>
+                        <option value="next-month">Next Month</option>
+                        <option value="flexible">I'm Flexible</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="motivation" class="form-input min-h-[100px]" placeholder=" " required></textarea>
+                    <label class="form-label">What motivated you to pursue this mastery course?</label>
+                </div>
+                
+                <div class="flex gap-4">
+                    <button type="button" onclick="openCalendly('mastery')" class="flex-1 border-2 border-sacred-gold text-sacred-gold py-4 rounded-full font-semibold hover:bg-sacred-gold hover:text-white transition-all">
+                        Schedule Call
+                    </button>
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Apply Now
+                    </button>
+                </div>
+                
+                <div class="success-message mt-4" id="masteryCourseSuccess">Application submitted! We'll contact you within 24 hours to discuss your enrollment.</div>
+                <div class="error-message mt-4" id="masteryCourseError">Please fill in all required fields.</div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content p-8">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl" onclick="closeModal('contactModal')">&times;</button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-sacred-lavender to-sacred-rose rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-envelope text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-2">Get In Touch</h3>
+                <p class="text-gray-600">Have questions? We'd love to hear from you. Send us a message and we'll respond within 24 hours.</p>
+            </div>
+            
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" netlify netlify-honeypot="bot-field" name="contact">
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="bot-field">
+                
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" placeholder=" " required>
+                    <label class="form-label">Your Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <select name="subject" class="form-input" required>
+                        <option value="">What's this about?</option>
+                        <option value="workshop-inquiry">Workshop Questions</option>
+                        <option value="course-info">Course Information</option>
+                        <option value="pricing">Pricing & Payment</option>
+                        <option value="technical-support">Technical Support</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="message" class="form-input min-h-[120px]" placeholder=" " required></textarea>
+                    <label class="form-label">Your Message</label>
+                </div>
+                
+                <button type="submit" class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                    <i class="fas fa-paper-plane mr-2"></i>Send Message
+                </button>
+                
+                <div class="success-message mt-4" id="contactSuccess">Thank you for your message! We'll get back to you within 24 hours.</div>
+                <div class="error-message mt-4" id="contactError">Please fill in all required fields.</div>
+            </form>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -1023,6 +1361,242 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        // Calendly Integration
+        function openCalendly(type = 'general') {
+            // These are placeholder URLs - replace with actual Calendly links
+            const calendlyUrls = {
+                'general': 'https://calendly.com/varaazarts/general-consultation',
+                'beginner': 'https://calendly.com/varaazarts/beginner-workshop',
+                'evening': 'https://calendly.com/varaazarts/evening-session',
+                'mastery': 'https://calendly.com/varaazarts/mastery-course-call',
+                'urgent': 'https://calendly.com/varaazarts/urgent-booking'
+            };
+            
+            const url = calendlyUrls[type] || calendlyUrls['general'];
+            
+            Calendly.initPopupWidget({
+                url: url
+            });
+            return false;
+        }
+
+        // Form Submission Handlers
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const email = form.querySelector('#newsletterEmail').value;
+            
+            if (!email || !isValidEmail(email)) {
+                showError('newsletterError', 'Please enter a valid email address.');
+                return;
+            }
+            
+            // Submit to Netlify
+            submitForm(form, 'newsletterSuccess', 'newsletterError', 
+                'Thank you for subscribing! Check your email for confirmation.');
+        }
+
+        function handleLeadMagnetSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            if (!validateForm(form)) {
+                showError('leadMagnetError', 'Please fill in all fields correctly.');
+                return;
+            }
+            
+            submitForm(form, 'leadMagnetSuccess', 'leadMagnetError', 
+                'Thank you! Check your email for the download link.');
+        }
+
+        function handleCourseSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            if (!validateForm(form)) {
+                showError('courseError', 'Please fill in all required fields.');
+                return;
+            }
+            
+            submitForm(form, 'courseSuccess', 'courseError', 
+                'Thank you! We\'ll send you personalized course recommendations within 24 hours.');
+        }
+
+        function handleMasteryCourseSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            if (!validateForm(form)) {
+                showError('masteryCourseError', 'Please fill in all required fields.');
+                return;
+            }
+            
+            submitForm(form, 'masteryCourseSuccess', 'masteryCourseError', 
+                'Application submitted! We\'ll contact you within 24 hours to discuss your enrollment.');
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            if (!validateForm(form)) {
+                showError('contactError', 'Please fill in all required fields.');
+                return;
+            }
+            
+            submitForm(form, 'contactSuccess', 'contactError', 
+                'Thank you for your message! We\'ll get back to you within 24 hours.');
+        }
+
+        // Utility Functions
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateForm(form) {
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#ef4444';
+                } else {
+                    field.style.borderColor = '#e5e7eb';
+                }
+                
+                if (field.type === 'email' && field.value && !isValidEmail(field.value)) {
+                    isValid = false;
+                    field.style.borderColor = '#ef4444';
+                }
+            });
+            
+            return isValid;
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            const successElement = document.getElementById(elementId.replace('Error', 'Success'));
+            
+            hideMessages(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+            }, 5000);
+        }
+
+        function showSuccess(elementId, message) {
+            const successElement = document.getElementById(elementId);
+            const errorElement = document.getElementById(elementId.replace('Success', 'Error'));
+            
+            hideMessages(elementId);
+            successElement.textContent = message;
+            successElement.style.display = 'block';
+            
+            setTimeout(() => {
+                successElement.style.display = 'none';
+            }, 7000);
+        }
+
+        function hideMessages(baseId) {
+            const successId = baseId.replace('Error', 'Success').replace('Success', 'Success');
+            const errorId = baseId.replace('Success', 'Error').replace('Error', 'Error');
+            
+            const successElement = document.getElementById(successId);
+            const errorElement = document.getElementById(errorId);
+            
+            if (successElement) successElement.style.display = 'none';
+            if (errorElement) errorElement.style.display = 'none';
+        }
+
+        function submitForm(form, successId, errorId, successMessage) {
+            const formData = new FormData(form);
+            
+            // Submit to Netlify Forms
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                showSuccess(successId, successMessage);
+                form.reset();
+                
+                // Close modal after successful submission
+                const modal = form.closest('.modal');
+                if (modal) {
+                    setTimeout(() => {
+                        closeModal(modal.id);
+                    }, 2000);
+                }
+                
+                // Track conversion (Google Analytics, Facebook Pixel, etc.)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        'event_category': 'lead_generation',
+                        'event_label': form.getAttribute('name')
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error('Form submission error:', error);
+                showError(errorId, 'Something went wrong. Please try again or contact us directly.');
+            });
+        }
+
+        // Auto-open lead magnet modal after 30 seconds (optional)
+        setTimeout(() => {
+            // Only show if user hasn't already interacted with forms
+            if (!localStorage.getItem('varaaz_lead_magnet_shown')) {
+                openModal('leadMagnetModal');
+                localStorage.setItem('varaaz_lead_magnet_shown', 'true');
+            }
+        }, 30000);
+
+        // Exit intent popup (optional)
+        let exitIntentTriggered = false;
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !exitIntentTriggered && !localStorage.getItem('varaaz_exit_intent')) {
+                exitIntentTriggered = true;
+                openModal('leadMagnetModal');
+                localStorage.setItem('varaaz_exit_intent', 'true');
+            }
+        });
+
+        // Add contact modal trigger to footer links
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactLinks = document.querySelectorAll('a[href="#contact"]');
+            contactLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal('contactModal');
+                });
+            });
+        });
     </script>
 </body>
 </html>
