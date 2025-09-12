@@ -1,0 +1,16 @@
+{
+  "name": "varaaz-arts-landing",
+  "version": "1.0.0",
+  "description": "High-converting landing page for Varaaz Arts - Sacred Geometry Art & Therapy",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/",
+    "build": "echo 'Building for production...'"
+  },
+  "keywords": ["sacred-geometry", "art-therapy", "mandala", "meditation", "healing"],
+  "author": "Varaaz Arts",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

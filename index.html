@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varaaz Arts - Discover Sacred Geometry Art & Heal Your Mind</title>
+    <meta name="description" content="Transform stress into serenity through sacred geometry art. Join Varalakshmi's meditation workshops and art courses for inner healing and peace.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sacred: {
+                            gold: '#D4AF37',
+                            lavender: '#E6E6FA',
+                            sage: '#9CAF88',
+                            rose: '#F4C2C2',
+                            cream: '#FFF8DC'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper for Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <style>
+        .mandala-animation {
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #D4AF37, #9CAF88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-sacred-cream to-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-sacred-lavender/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center">
+                        <i class="fas fa-lotus-flower text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-serif font-bold gradient-text">Varaaz Arts</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-sacred-gold transition-colors">About</a>
+                    <a href="#courses" class="text-gray-600 hover:text-sacred-gold transition-colors">Courses</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-sacred-gold transition-colors">Gallery</a>
+                    <a href="#contact" class="text-gray-600 hover:text-sacred-gold transition-colors">Contact</a>
+                </div>
+                
+                <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-6 py-2 rounded-full hover:shadow-lg transition-all">
+                    Join Workshop
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 rounded-full bg-sacred-lavender/20 floating"></div>
+            <div class="absolute bottom-20 right-10 w-24 h-24 rounded-full bg-sacred-rose/20 floating" style="animation-delay: -1s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-sacred-sage/20 floating" style="animation-delay: -2s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left" data-aos="fade-right">
+                    <h1 class="text-5xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
+                        Discover the Art of 
+                        <span class="gradient-text">Sacred Geometry</span>
+                    </h1>
+                    
+                    <h2 class="text-xl lg:text-2xl text-gray-600 mb-8 font-light">
+                        Heal Your Mind, Uplift Your Spirit
+                    </h2>
+                    
+                    <p class="text-lg text-gray-700 mb-10 leading-relaxed max-w-2xl">
+                        Transform stress, anxiety, and sleeplessness into serenity through the meditative practice of sacred geometry. Join thousands who have found inner peace through art.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-lotus-flower mr-2"></i>Join a Workshop
+                        </button>
+                        <button class="border-2 border-sacred-gold text-sacred-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-sacred-gold hover:text-white transition-all duration-300">
+                            <i class="fas fa-palette mr-2"></i>Explore Art Courses
+                        </button>
+                    </div>
+                    
+                    <!-- Social Proof Strip -->
+                    <div class="mt-12 pt-8 border-t border-gray-200" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-sm text-gray-500 mb-4">Featured in:</p>
+                        <div class="flex flex-wrap justify-center lg:justify-start items-center space-x-8 opacity-60">
+                            <span class="text-2xl font-bold text-gray-400">Art Today</span>
+                            <span class="text-2xl font-bold text-gray-400">Mindful Living</span>
+                            <span class="text-2xl font-bold text-gray-400">Wellness Weekly</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Animated Mandala -->
+                        <div class="w-96 h-96 relative">
+                            <svg class="mandala-animation w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Outer Ring -->
+                                <circle cx="200" cy="200" r="180" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.3"/>
+                                <circle cx="200" cy="200" r="160" fill="none" stroke="#9CAF88" stroke-width="1" opacity="0.4"/>
+                                <circle cx="200" cy="200" r="140" fill="none" stroke="#F4C2C2" stroke-width="1" opacity="0.3"/>
+                                
+                                <!-- Inner Patterns -->
+                                <g transform="translate(200,200)">
+                                    <!-- Petals -->
+                                    <g>
+                                        <path d="M0,-120 Q60,-60 0,0 Q-60,-60 0,-120" fill="#D4AF37" opacity="0.2"/>
+                                        <path d="M85,-85 Q120,0 85,85 Q0,120 -85,85 Q-120,0 -85,-85 Q0,-120 85,-85" fill="#9CAF88" opacity="0.15"/>
+                                    </g>
+                                    
+                                    <!-- Center -->
+                                    <circle r="40" fill="url(#centerGradient)" opacity="0.6"/>
+                                </g>
+                                
+                                <!-- Gradient Definitions -->
+                                <defs>
+                                    <radialGradient id="centerGradient">
+                                        <stop offset="0%" stop-color="#D4AF37"/>
+                                        <stop offset="100%" stop-color="#9CAF88"/>
+                                    </radialGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        
+                        <!-- Author Photo (placeholder) -->
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-gradient-to-br from-sacred-gold to-sacred-sage flex items-center justify-center shadow-xl">
+                            <i class="fas fa-user-circle text-white text-6xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section class="py-16 bg-white/50">
+        <div class="container mx-auto px-6">
+            <div class="swiper testimonialSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide text-center">
+                        <div class="max-w-4xl mx-auto">
+                            <i class="fas fa-quote-left text-4xl text-sacred-gold mb-6"></i>
+                            <p class="text-xl font-light text-gray-700 mb-6 leading-relaxed">
+                                "Varalakshmi's sacred geometry workshop transformed my approach to stress. The meditative art practice brought me peace I hadn't felt in years."
+                            </p>
+                            <div class="flex items-center justify-center space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-sacred-lavender"></div>
+                                <div class="text-left">
+                                    <p class="font-semibold">Sarah Chen</p>
+                                    <p class="text-sm text-gray-500">Wellness Coach</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Sacred Geometry Art Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-white to-sacred-cream">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6 gradient-text">What is Sacred Geometry Art?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Sacred geometry is not just art — it's a path to inner balance and peace through ancient patterns that connect us to the universe.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-12 mb-16">
+                <!-- Spiritual Roots -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center">
+                        <i class="fas fa-om text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold mb-4">Spiritual Roots</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Ancient patterns found in nature, temples, and mandalas that represent the fundamental structures of creation and consciousness.
+                    </p>
+                </div>
+                
+                <!-- Meditative Practice -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-sacred-sage to-sacred-lavender rounded-full flex items-center justify-center">
+                        <i class="fas fa-leaf text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold mb-4">Meditative Practice</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        The rhythmic process of creating geometric patterns naturally calms the mind and induces a meditative state of flow and focus.
+                    </p>
+                </div>
+                
+                <!-- Therapeutic Benefits -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-sacred-lavender to-sacred-rose rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold mb-4">Therapeutic Healing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Proven to reduce stress, improve mindfulness, enhance focus, and promote emotional healing through creative expression.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Geometric Pattern Evolution Animation -->
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="bg-white rounded-3xl p-12 shadow-2xl">
+                    <h3 class="text-3xl font-serif font-semibold text-center mb-8">The Evolution of Sacred Patterns</h3>
+                    <div class="flex flex-wrap justify-center items-center space-x-8">
+                        <!-- Simple Circle -->
+                        <div class="text-center mb-8">
+                            <svg width="80" height="80" viewBox="0 0 80 80" class="mx-auto mb-4">
+                                <circle cx="40" cy="40" r="30" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                            </svg>
+                            <p class="text-sm text-gray-500">Unity</p>
+                        </div>
+                        
+                        <i class="fas fa-arrow-right text-2xl text-sacred-gold"></i>
+                        
+                        <!-- Flower of Life -->
+                        <div class="text-center mb-8">
+                            <svg width="80" height="80" viewBox="0 0 80 80" class="mx-auto mb-4">
+                                <circle cx="40" cy="40" r="15" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                                <circle cx="25" cy="30" r="15" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                                <circle cx="55" cy="30" r="15" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                                <circle cx="25" cy="50" r="15" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                                <circle cx="55" cy="50" r="15" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                            </svg>
+                            <p class="text-sm text-gray-500">Connection</p>
+                        </div>
+                        
+                        <i class="fas fa-arrow-right text-2xl text-sacred-gold"></i>
+                        
+                        <!-- Complex Mandala -->
+                        <div class="text-center mb-8">
+                            <svg width="80" height="80" viewBox="0 0 80 80" class="mx-auto mb-4">
+                                <circle cx="40" cy="40" r="35" fill="none" stroke="#F4C2C2" stroke-width="1"/>
+                                <circle cx="40" cy="40" r="25" fill="none" stroke="#D4AF37" stroke-width="1"/>
+                                <circle cx="40" cy="40" r="15" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                                <circle cx="40" cy="40" r="5" fill="#D4AF37"/>
+                            </svg>
+                            <p class="text-sm text-gray-500">Harmony</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Varaaz Arts Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-8">
+                        Why Choose <span class="gradient-text">Varaaz Arts?</span>
+                    </h2>
+                    
+                    <!-- About Varalakshmi -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-sacred-gold">Meet Varalakshmi</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            An internationally recognized sacred geometry artist who has transformed thousands of lives through the healing power of art. Her work bridges ancient Indian wisdom with contemporary therapeutic practices.
+                        </p>
+                        
+                        <!-- Awards & Recognition -->
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <span class="bg-sacred-lavender/30 px-4 py-2 rounded-full text-sm font-medium">International Art Award 2023</span>
+                            <span class="bg-sacred-rose/30 px-4 py-2 rounded-full text-sm font-medium">Wellness Therapy Pioneer</span>
+                            <span class="bg-sacred-sage/30 px-4 py-2 rounded-full text-sm font-medium">Featured in 50+ Publications</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Differentiators -->
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-lotus-flower text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Indian Cultural Fusion</h4>
+                                <p class="text-gray-600">Ancient Vedic wisdom merged with modern therapeutic art techniques for deeper spiritual connection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-sacred-sage to-sacred-lavender rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user-md text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Personalized Guidance</h4>
+                                <p class="text-gray-600">Direct feedback and mentorship from Varalakshmi throughout your healing journey.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-sacred-lavender to-sacred-rose rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heart-pulse text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2">Art as Therapy Focus</h4>
+                                <p class="text-gray-600">Beyond artistic skills - we focus on emotional healing, stress relief, and inner transformation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Visual -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Student Artwork Examples -->
+                        <div class="space-y-6">
+                            <div class="aspect-square rounded-2xl bg-gradient-to-br from-sacred-gold/20 to-sacred-sage/20 p-6 flex items-center justify-center">
+                                <svg width="120" height="120" viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="50" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                                    <circle cx="60" cy="60" r="30" fill="none" stroke="#9CAF88" stroke-width="1"/>
+                                    <circle cx="60" cy="60" r="10" fill="#D4AF37"/>
+                                </svg>
+                            </div>
+                            <div class="aspect-square rounded-2xl bg-gradient-to-br from-sacred-lavender/20 to-sacred-rose/20 p-6 flex items-center justify-center">
+                                <svg width="120" height="120" viewBox="0 0 120 120">
+                                    <polygon points="60,20 80,40 80,80 60,100 40,80 40,40" fill="none" stroke="#F4C2C2" stroke-width="2"/>
+                                    <polygon points="60,35 70,45 70,75 60,85 50,75 50,45" fill="none" stroke="#E6E6FA" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-6 pt-8">
+                            <div class="aspect-square rounded-2xl bg-gradient-to-br from-sacred-sage/20 to-sacred-gold/20 p-6 flex items-center justify-center">
+                                <svg width="120" height="120" viewBox="0 0 120 120">
+                                    <rect x="30" y="30" width="60" height="60" fill="none" stroke="#9CAF88" stroke-width="2" transform="rotate(45 60 60)"/>
+                                    <rect x="45" y="45" width="30" height="30" fill="none" stroke="#D4AF37" stroke-width="1" transform="rotate(45 60 60)"/>
+                                </svg>
+                            </div>
+                            <div class="aspect-square rounded-2xl bg-gradient-to-br from-sacred-rose/20 to-sacred-lavender/20 p-6 flex items-center justify-center">
+                                <svg width="120" height="120" viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="40" fill="none" stroke="#F4C2C2" stroke-width="2"/>
+                                    <path d="M60 20 L80 60 L60 100 L40 60 Z" fill="none" stroke="#E6E6FA" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-2xl">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-sacred-gold">10k+</p>
+                            <p class="text-xs text-gray-500">Students Healed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses & Workshops Section -->
+    <section id="courses" class="py-20 bg-gradient-to-br from-sacred-cream to-sacred-lavender/20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6 gradient-text">Transform Through Art</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Choose your path to healing with our carefully designed courses and workshops
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Beginner Mandala Workshop -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-serif font-bold mb-4">Beginner Mandala Workshop</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Perfect for stress relief and beginners. Learn the fundamentals of sacred geometry through gentle mandala creation.</p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>
+                            2 Days Live • Weekend Format
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-signal mr-2"></i>
+                            Beginner Level
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-users mr-2"></i>
+                            Max 12 Students
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-3xl font-bold text-sacred-gold">$149</span>
+                            <span class="text-sm text-gray-500 line-through">$199</span>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Sacred Geometry Mastery Course -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl card-hover relative" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Popular Badge -->
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-6 py-2 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </div>
+                    </div>
+                    
+                    <div class="w-16 h-16 bg-gradient-to-br from-sacred-sage to-sacred-lavender rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-serif font-bold mb-4">Sacred Geometry Mastery</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive 6-week journey into advanced sacred geometry with personal mentorship and therapeutic focus.</p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-2"></i>
+                            6 Weeks • 3x per week
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-signal mr-2"></i>
+                            Intermediate to Advanced
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-video mr-2"></i>
+                            Live + Recorded Sessions
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-3xl font-bold text-sacred-gold">$497</span>
+                            <span class="text-sm text-gray-500 line-through">$697</span>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mindful Mandala Evenings -->
+                <div class="bg-white rounded-3xl p-8 shadow-2xl card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sacred-lavender to-sacred-rose rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-moon text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-serif font-bold mb-4">Mindful Mandala Evenings</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Weekly calming sessions designed specifically for relaxation, better sleep, and stress relief after work.</p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>
+                            Weekly • 2 Hours
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-signal mr-2"></i>
+                            All Levels Welcome
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-spa mr-2"></i>
+                            Focus on Relaxation
+                        </div>
+                    </div>
+                    
+                    <div class="border-t pt-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-3xl font-bold text-sacred-gold">$47</span>
+                            <span class="text-sm text-gray-500">per session</span>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-sacred-gold to-sacred-sage text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healing Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6 gradient-text">Experience Deep Healing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Discover how sacred geometry art transforms your emotional and mental well-being
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-4 gap-8 mb-16">
+                <!-- Reduce Stress -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center">
+                        <i class="fas fa-spa text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Reduce Stress & Anxiety</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        The meditative rhythm of creating patterns naturally calms your nervous system and reduces cortisol levels
+                    </p>
+                </div>
+                
+                <!-- Improve Focus -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-sacred-sage to-sacred-lavender rounded-full flex items-center justify-center">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Improve Focus & Mindfulness</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Geometric art practice enhances concentration and brings you into the present moment naturally
+                    </p>
+                </div>
+                
+                <!-- Better Sleep -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-sacred-lavender to-sacred-rose rounded-full flex items-center justify-center">
+                        <i class="fas fa-moon text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Calm Mind, Better Sleep</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Evening art sessions help quiet racing thoughts and prepare your mind for restorative sleep
+                    </p>
+                </div>
+                
+                <!-- Boost Joy -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-sacred-rose to-sacred-gold rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Boost Self-Expression & Joy</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Creative expression releases endorphins and builds confidence while connecting you to your inner self
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gradient-to-br from-sacred-cream to-white rounded-3xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-sacred-gold mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <div class="flex mb-2">
+                                <span class="text-sacred-gold">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            "After just 3 sessions, I noticed my anxiety levels dropping significantly. The gentle rhythm of creating mandalas became my evening meditation."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-sacred-lavender rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-semibold">ML</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Maya Lin</p>
+                                <p class="text-sm text-gray-500">Marketing Executive</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gradient-to-br from-sacred-cream to-white rounded-3xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-sacred-gold mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <div class="flex mb-2">
+                                <span class="text-sacred-gold">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            "I've tried many stress relief methods, but nothing compared to Varalakshmi's approach. The art becomes a portal to inner peace."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-sacred-sage rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-semibold">DR</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Dr. Rajesh</p>
+                                <p class="text-sm text-gray-500">Physician</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-gradient-to-br from-sacred-cream to-white rounded-3xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                        <div class="mb-6">
+                            <svg class="w-8 h-8 text-sacred-gold mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <div class="flex mb-2">
+                                <span class="text-sacred-gold">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            "My insomnia vanished after starting the evening mandala sessions. Now I sleep like a baby and wake up refreshed."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-sacred-rose rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-semibold">SP</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Sophia Park</p>
+                                <p class="text-sm text-gray-500">Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-br from-sacred-lavender/10 to-sacred-rose/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6 gradient-text">Gallery of Sacred Creations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Witness the beauty and healing power of sacred geometry through our students' transformative artwork
+                </p>
+            </div>
+            
+            <!-- Gallery Tabs -->
+            <div class="flex justify-center mb-12" data-aos="fade-up">
+                <div class="bg-white rounded-full p-2 shadow-lg">
+                    <button class="gallery-tab active px-6 py-3 rounded-full font-semibold transition-all" data-tab="varalakshmi">
+                        Varalakshmi's Art
+                    </button>
+                    <button class="gallery-tab px-6 py-3 rounded-full font-semibold transition-all" data-tab="students">
+                        Student Creations
+                    </button>
+                    <button class="gallery-tab px-6 py-3 rounded-full font-semibold transition-all" data-tab="process">
+                        Process Videos
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-content" id="varalakshmi" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Master Artwork Placeholders -->
+                    <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sacred-gold/20 to-sacred-sage/20 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg width="200" height="200" viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                                <circle cx="100" cy="100" r="70" fill="none" stroke="#9CAF88" stroke-width="1"/>
+                                <circle cx="100" cy="100" r="50" fill="none" stroke="#F4C2C2" stroke-width="1"/>
+                                <circle cx="100" cy="100" r="30" fill="none" stroke="#E6E6FA" stroke-width="1"/>
+                                <circle cx="100" cy="100" r="10" fill="#D4AF37"/>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="bg-white text-sacred-gold px-6 py-3 rounded-full font-semibold">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sacred-sage/20 to-sacred-lavender/20 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg width="200" height="200" viewBox="0 0 200 200">
+                                <polygon points="100,20 160,60 160,140 100,180 40,140 40,60" fill="none" stroke="#9CAF88" stroke-width="2"/>
+                                <polygon points="100,40 140,70 140,130 100,160 60,130 60,70" fill="none" stroke="#E6E6FA" stroke-width="1"/>
+                                <polygon points="100,60 120,80 120,120 100,140 80,120 80,80" fill="none" stroke="#F4C2C2" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="bg-white text-sacred-gold px-6 py-3 rounded-full font-semibold">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sacred-lavender/20 to-sacred-rose/20 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg width="200" height="200" viewBox="0 0 200 200">
+                                <rect x="50" y="50" width="100" height="100" fill="none" stroke="#F4C2C2" stroke-width="2" transform="rotate(45 100 100)"/>
+                                <rect x="70" y="70" width="60" height="60" fill="none" stroke="#E6E6FA" stroke-width="1" transform="rotate(45 100 100)"/>
+                                <circle cx="100" cy="100" r="20" fill="#D4AF37"/>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <button class="bg-white text-sacred-gold px-6 py-3 rounded-full font-semibold">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i>Buy Originals & Prints
+                    </button>
+                </div>
+            </div>
+            
+            <div class="gallery-content hidden" id="students">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <!-- Student Work Placeholders -->
+                    <div class="rounded-2xl bg-white p-4 shadow-lg">
+                        <div class="aspect-square bg-gradient-to-br from-sacred-gold/10 to-sacred-sage/10 rounded-xl mb-4 flex items-center justify-center">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+                                <circle cx="60" cy="60" r="30" fill="none" stroke="#9CAF88" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm text-gray-600 text-center">Sarah's First Mandala</p>
+                    </div>
+                    
+                    <div class="rounded-2xl bg-white p-4 shadow-lg">
+                        <div class="aspect-square bg-gradient-to-br from-sacred-sage/10 to-sacred-lavender/10 rounded-xl mb-4 flex items-center justify-center">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <polygon points="60,15 90,45 90,75 60,105 30,75 30,45" fill="none" stroke="#9CAF88" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm text-gray-600 text-center">Mike's Healing Journey</p>
+                    </div>
+                    
+                    <div class="rounded-2xl bg-white p-4 shadow-lg">
+                        <div class="aspect-square bg-gradient-to-br from-sacred-lavender/10 to-sacred-rose/10 rounded-xl mb-4 flex items-center justify-center">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <rect x="30" y="30" width="60" height="60" fill="none" stroke="#F4C2C2" stroke-width="1.5" transform="rotate(45 60 60)"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm text-gray-600 text-center">Emma's Peace Pattern</p>
+                    </div>
+                    
+                    <div class="rounded-2xl bg-white p-4 shadow-lg">
+                        <div class="aspect-square bg-gradient-to-br from-sacred-rose/10 to-sacred-gold/10 rounded-xl mb-4 flex items-center justify-center">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="40" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M60 20 L80 60 L60 100 L40 60 Z" fill="none" stroke="#F4C2C2" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm text-gray-600 text-center">David's Transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-sacred-gold/10 via-sacred-sage/10 to-sacred-lavender/10 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-sacred-gold/10 floating"></div>
+            <div class="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-sacred-sage/10 floating" style="animation-delay: -1s;"></div>
+            <div class="absolute top-1/2 right-1/4 w-20 h-20 rounded-full bg-sacred-rose/10 floating" style="animation-delay: -2s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-6xl font-serif font-bold mb-8 gradient-text">Start Your Journey Today</h2>
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                    Transform stress into serenity. Join thousands who have found inner peace through sacred geometry.
+                </p>
+                
+                <!-- Urgency Message -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 mb-10 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-sacred-gold text-2xl mr-3"></i>
+                        <span class="text-lg font-semibold text-gray-700">Limited Seats Available</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Our next Beginner Mandala Workshop starts in just 5 days. Only 3 spots remaining!</p>
+                    
+                    <!-- Main CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center">
+                            <i class="fas fa-lotus-flower mr-3"></i>Reserve Your Spot Now
+                        </button>
+                        <button class="border-2 border-sacred-gold text-sacred-gold px-10 py-5 rounded-full text-xl font-semibold hover:bg-sacred-gold hover:text-white transition-all duration-300 flex items-center">
+                            <i class="fas fa-download mr-3"></i>Free Starter Guide
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap justify-center items-center space-x-8 text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        <span>30-Day Money Back Guarantee</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-users mr-2"></i>
+                        <span>10,000+ Students Helped</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star mr-2"></i>
+                        <span>4.9/5 Average Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center">
+                            <i class="fas fa-lotus-flower text-white text-xl"></i>
+                        </div>
+                        <span class="text-3xl font-serif font-bold gradient-text">Varaaz Arts</span>
+                    </div>
+                    <p class="text-lg text-gray-300 mb-6 font-light">Where Geometry Meets Soul</p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Transform your life through the ancient wisdom of sacred geometry. Join our community of healing artists and discover inner peace through creative expression.
+                    </p>
+                    
+                    <!-- Newsletter Signup -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4">Get Art Tips & Healing Insights</h4>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-3 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-sacred-gold">
+                            <button class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-gray-400 hover:text-sacred-gold transition-colors">About</a></li>
+                        <li><a href="#courses" class="text-gray-400 hover:text-sacred-gold transition-colors">Courses</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-sacred-gold transition-colors">Gallery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors">Workshops</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors">Art Store</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-sacred-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Get in Touch</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-sacred-gold"></i>
+                            <span class="text-gray-400">hello@varaazarts.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-sacred-gold"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-sacred-gold"></i>
+                            <span class="text-gray-400">San Francisco, CA</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Social Links -->
+                    <div class="mt-8">
+                        <h5 class="font-semibold mb-4">Follow Our Journey</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Varaaz Arts. All rights reserved. Crafted with ♡ for healing through sacred geometry.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.testimonialSwiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+        });
+
+        // Gallery Tab Functionality
+        document.querySelectorAll('.gallery-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.gallery-tab').forEach(t => {
+                    t.classList.remove('active', 'bg-gradient-to-r', 'from-sacred-gold', 'to-sacred-sage', 'text-white');
+                    t.classList.add('text-gray-600');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active', 'bg-gradient-to-r', 'from-sacred-gold', 'to-sacred-sage', 'text-white');
+                this.classList.remove('text-gray-600');
+                
+                // Hide all gallery content
+                document.querySelectorAll('.gallery-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show corresponding content
+                const targetTab = this.getAttribute('data-tab');
+                document.getElementById(targetTab).classList.remove('hidden');
+            });
+        });
+
+        // Set initial active tab styling
+        document.querySelector('.gallery-tab.active').classList.add('bg-gradient-to-r', 'from-sacred-gold', 'to-sacred-sage', 'text-white');
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (if needed)
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
