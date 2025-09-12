@@ -7,10 +7,17 @@
     "dev": "live-server --port=3000 --open=/",
     "build": "echo 'Building for production...'"
   },
-  "keywords": ["sacred-geometry", "art-therapy", "mandala", "meditation", "healing"],
+  "keywords": [
+    "sacred-geometry",
+    "art-therapy",
+    "mandala",
+    "meditation",
+    "healing"
+  ],
   "author": "Varaaz Arts",
   "license": "MIT",
   "devDependencies": {
+    "html-minifier": "^4.0.0",
     "live-server": "^1.2.2"
   }
 }
