@@ -963,36 +963,62 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-16">
+    <footer id="contact" class="bg-gradient-to-b from-gray-900 to-gray-950 text-white py-20">
         <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
+            <!-- Top Section -->
+            <div class="grid lg:grid-cols-5 gap-10 mb-16">
+                <!-- Brand Column -->
                 <div class="lg:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center">
-                            <i class="fas fa-lotus-flower text-white text-xl"></i>
+                        <div class="w-14 h-14 bg-gradient-to-br from-sacred-gold to-sacred-sage rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-lotus-flower text-white text-2xl"></i>
                         </div>
                         <span class="text-3xl font-serif font-bold gradient-text">Varaaz Arts</span>
                     </div>
-                    <p class="text-lg text-gray-300 mb-6 font-light">Where Geometry Meets Soul</p>
+                    <p class="text-xl text-gray-300 mb-4 font-light">Where Geometry Meets Soul</p>
                     <p class="text-gray-400 leading-relaxed mb-8">
                         Transform your life through the ancient wisdom of sacred geometry. Join our community of healing artists and discover inner peace through creative expression.
                     </p>
-                    
+
+                    <!-- Trust Badges -->
+                    <div class="bg-gray-800/50 rounded-2xl p-6 mb-6">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-sacred-gold mb-1">10,000+</div>
+                                <div class="text-xs text-gray-400">Students Healed</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-sacred-gold mb-1">4.9/5</div>
+                                <div class="text-xs text-gray-400">★★★★★ Rating</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-sacred-gold mb-1">50+</div>
+                                <div class="text-xs text-gray-400">Media Features</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-sacred-gold mb-1">30-Day</div>
+                                <div class="text-xs text-gray-400">Money Back</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Newsletter Signup -->
                     <div>
-                        <h4 class="text-xl font-semibold mb-4">Get Art Tips & Healing Insights</h4>
-                        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4" onsubmit="handleNewsletterSubmit(event)" action="https://formspree.io/f/xkgvebqy" method="POST">
-                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required class="flex-1 px-6 py-3 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-sacred-gold">
-                            <button type="submit" class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                        <h4 class="text-lg font-semibold mb-3 flex items-center">
+                            <i class="fas fa-envelope-open-text mr-2 text-sacred-gold"></i>
+                            Art Tips & Healing Insights
+                        </h4>
+                        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3" onsubmit="handleNewsletterSubmit(event)" action="https://formspree.io/f/xkgvebqy" method="POST">
+                            <input type="email" id="newsletterEmail" name="email" placeholder="Your email address" required class="flex-1 px-5 py-3 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-sacred-gold transition-all">
+                            <button type="submit" class="bg-gradient-to-r from-sacred-gold to-sacred-sage text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all">
                                 Subscribe
                             </button>
                         </form>
-                        <div id="newsletterSuccess" class="success-message mt-2">Thank you for subscribing! Check your email for confirmation.</div>
-                        <div id="newsletterError" class="error-message mt-2">Please enter a valid email address.</div>
+                        <div id="newsletterSuccess" class="success-message mt-2 text-green-400">Thank you for subscribing! Check your email for confirmation.</div>
+                        <div id="newsletterError" class="error-message mt-2 text-red-400">Please enter a valid email address.</div>
                     </div>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
                     <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
@@ -1005,49 +1031,135 @@
                         <li><a href="contact.html" class="text-gray-400 hover:text-sacred-gold transition-colors">Contact</a></li>
                     </ul>
                 </div>
-                
-                <!-- Contact Info -->
+
+                <!-- Resources -->
                 <div>
-                    <h4 class="text-xl font-semibold mb-6">Get in Touch</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-sacred-gold"></i>
-                            <span class="text-gray-400">hello@varaazarts.com</span>
+                    <h4 class="text-lg font-semibold mb-6 border-b border-gray-800 pb-3">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" onclick="openModal('leadMagnetModal'); return false;" class="text-gray-400 hover:text-sacred-gold transition-colors flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-sacred-gold opacity-0 hover:opacity-100 transition-opacity"></i>Free Starter Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-sacred-gold opacity-0 hover:opacity-100 transition-opacity"></i>Blog & Articles</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-sacred-gold opacity-0 hover:opacity-100 transition-opacity"></i>Student Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-sacred-gold opacity-0 hover:opacity-100 transition-opacity"></i>FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-sacred-gold opacity-0 hover:opacity-100 transition-opacity"></i>Video Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-sacred-gold transition-colors flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-sacred-gold opacity-0 hover:opacity-100 transition-opacity"></i>Community Forum</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Hours -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 border-b border-gray-800 pb-3">Get in Touch</h4>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mr-3 text-sacred-gold mt-1"></i>
+                            <div>
+                                <a href="mailto:hello@varaazarts.com" class="text-gray-400 hover:text-sacred-gold transition-colors">hello@varaazarts.com</a>
+                            </div>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone mr-3 text-sacred-gold"></i>
-                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mr-3 text-sacred-gold mt-1"></i>
+                            <div>
+                                <a href="tel:+15551234567" class="text-gray-400 hover:text-sacred-gold transition-colors">+1 (555) 123-4567</a>
+                                <p class="text-xs text-gray-500 mt-1">Mon-Fri, 9am-6pm PST</p>
+                            </div>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-3 text-sacred-gold"></i>
-                            <span class="text-gray-400">San Francisco, CA</span>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mr-3 text-sacred-gold mt-1 text-lg"></i>
+                            <div>
+                                <a href="https://wa.me/15551234567" class="text-gray-400 hover:text-sacred-gold transition-colors">WhatsApp Us</a>
+                                <p class="text-xs text-gray-500 mt-1">Quick responses</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-sacred-gold mt-1"></i>
+                            <div>
+                                <span class="text-gray-400">San Francisco, CA</span>
+                                <p class="text-xs text-gray-500 mt-1">Virtual classes worldwide</p>
+                            </div>
                         </li>
                     </ul>
-                    
+
                     <!-- Social Links -->
-                    <div class="mt-8">
-                        <h5 class="font-semibold mb-4">Follow Our Journey</h5>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                    <div>
+                        <h5 class="font-semibold mb-4 text-sm">Follow Our Journey</h5>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-sacred-gold hover:to-sacred-sage transition-all transform hover:scale-110" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                            <a href="#" class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-sacred-gold hover:to-sacred-sage transition-all transform hover:scale-110" aria-label="YouTube">
                                 <i class="fab fa-youtube"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                            <a href="#" class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-sacred-gold hover:to-sacred-sage transition-all transform hover:scale-110" aria-label="Pinterest">
                                 <i class="fab fa-pinterest"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sacred-gold transition-colors">
+                            <a href="#" class="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-br hover:from-sacred-gold hover:to-sacred-sage transition-all transform hover:scale-110" aria-label="Facebook">
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Copyright -->
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Varaaz Arts. All rights reserved. Crafted with ♡ for healing through sacred geometry.</p>
+
+            <!-- Testimonial Bar -->
+            <div class="bg-gradient-to-r from-sacred-gold/10 via-sacred-sage/10 to-sacred-lavender/10 rounded-2xl p-8 mb-12 border border-sacred-gold/20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-sacred-lavender/30 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-quote-left text-sacred-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300 italic mb-2">"Varalakshmi's courses transformed my life. I found peace I never knew existed."</p>
+                            <p class="text-sm text-gray-500">- Sarah Chen, 10,000+ satisfied students</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-3xl text-sacred-gold">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment & Trust Indicators -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-10 pb-10 border-b border-gray-800">
+                <div>
+                    <p class="text-sm text-gray-500 mb-3">Accepted Payment Methods</p>
+                    <div class="flex items-center space-x-4 text-gray-600">
+                        <i class="fab fa-cc-visa text-3xl hover:text-sacred-gold transition-colors"></i>
+                        <i class="fab fa-cc-mastercard text-3xl hover:text-sacred-gold transition-colors"></i>
+                        <i class="fab fa-cc-amex text-3xl hover:text-sacred-gold transition-colors"></i>
+                        <i class="fab fa-cc-paypal text-3xl hover:text-sacred-gold transition-colors"></i>
+                        <i class="fab fa-cc-apple-pay text-3xl hover:text-sacred-gold transition-colors"></i>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <div class="flex items-center space-x-6 text-gray-400 text-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt mr-2 text-sacred-gold"></i>
+                            <span>Secure Checkout</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-lock mr-2 text-sacred-gold"></i>
+                            <span>SSL Encrypted</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-undo mr-2 text-sacred-gold"></i>
+                            <span>30-Day Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+                <div class="order-2 md:order-1">
+                    <p>&copy; 2024 Varaaz Arts. All rights reserved. Crafted with <span class="text-sacred-gold">♡</span> for healing through sacred geometry.</p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <ul class="flex flex-wrap justify-center space-x-6">
+                        <li><a href="#" class="hover:text-sacred-gold transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-sacred-gold transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-sacred-gold transition-colors">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-sacred-gold transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
